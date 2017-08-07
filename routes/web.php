@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/freehours/{id}', ['as'=>"freehours",'uses'=>"FreeHours@show"]);
+
+Route::get('/form', function () {
+    return view('form');
+});
+Route::get('/booking', "BookingController@show");
+Route::post('/booking', "BookingController@save_booking");
+//Route::post('/booking', function (){
+ //   print_r($_POST);
+//});
