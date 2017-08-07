@@ -100,23 +100,13 @@ class DBController extends Controller
                 })
                 ->get();
 
-
-
             if(!count($booking)) {
 
-
-
                 return true;
-
-
             }
 
-
-
         }
-
         return false;
-
     }
     /**
      * Save the booking to the database.
