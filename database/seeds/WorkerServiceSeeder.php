@@ -1,0 +1,81 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class WorkerServiceSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('worker_services')->insert([
+            [
+                'worker_id'=>'1',
+                'service_id'=>'1'
+            ],
+            [
+                'worker_id'=>'1',
+                'service_id'=>'2'
+            ],
+            [
+                'worker_id'=>'1',
+                'service_id'=>'3'
+            ],
+            [
+                'worker_id'=>'1',
+                'service_id'=>'4'
+            ],
+            [
+                'worker_id'=>'1',
+                'service_id'=>'5'
+            ],
+            [
+                'worker_id'=>'2',
+                'service_id'=>'3'
+            ],
+            [
+                'worker_id'=>'2',
+                'service_id'=>'4'
+            ],
+            [
+                'worker_id'=>'2',
+                'service_id'=>'5'
+            ],
+            [
+                'worker_id'=>'3',
+                'service_id'=>'1'
+            ],
+            [
+                'worker_id'=>'3',
+                'service_id'=>'2'
+            ],
+            [
+                'worker_id'=>'3',
+                'service_id'=>'3'
+            ],
+            [
+                'worker_id'=>'4',
+                'service_id'=>'2'
+            ],
+            [
+                'worker_id'=>'4',
+                'service_id'=>'3'
+            ],
+            [
+                'worker_id'=>'4',
+                'service_id'=>'4'
+            ],
+            [
+                'worker_id'=>'5',
+                'service_id'=>'1'
+            ],
+            [
+                'worker_id'=>'5',
+                'service_id'=>'3'
+            ]
+        ]);
+    }
+}

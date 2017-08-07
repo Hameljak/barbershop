@@ -1,0 +1,81 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class WorkDaysSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        DB::table('work_days')->insert([
+        [
+            'worker_id'=>'1',
+            'week_day_id'=>'6'
+        ],
+         [
+             'worker_id'=>'2',
+             'week_day_id'=>'1'
+         ],
+         [
+             'worker_id'=>'2',
+             'week_day_id'=>'3'
+         ],
+         [
+             'worker_id'=>'2',
+             'week_day_id'=>'5'
+         ],
+         [
+             'worker_id'=>'2',
+             'week_day_id'=>'7'
+         ],
+         [
+             'worker_id'=>'3',
+             'week_day_id'=>'2'
+         ],
+         [
+             'worker_id'=>'3',
+             'week_day_id'=>'4'
+         ],
+         [
+             'worker_id'=>'3',
+             'week_day_id'=>'6'
+         ],
+         [
+             'worker_id'=>'3',
+             'week_day_id'=>'7'
+         ],
+         [
+             'worker_id'=>'4',
+             'week_day_id'=>'1'
+         ],
+         [
+             'worker_id'=>'4',
+             'week_day_id'=>'2'
+         ],
+         [
+             'worker_id'=>'4',
+             'week_day_id'=>'3'
+         ],
+         [
+             'worker_id'=>'4',
+             'week_day_id'=>'4'
+         ],
+         [
+             'worker_id'=>'4',
+             'week_day_id'=>'5'
+         ],
+         [
+             'worker_id'=>'5',
+             'week_day_id'=>'6'
+         ],
+         [
+             'worker_id'=>'5',
+             'week_day_id'=>'7'
+         ]
+]);
+    }
+}
