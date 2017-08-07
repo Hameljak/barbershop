@@ -35,6 +35,7 @@ class DBController extends Controller
      *
      * @var string
      */
+
     public $time_start;
 
     public $time_finish;
@@ -42,6 +43,8 @@ class DBController extends Controller
     public $week_day_s;
 
     public $hour_s;
+
+    public $worker;
 
     /**
      * Create a new DBController instance.
@@ -83,7 +86,7 @@ class DBController extends Controller
             ->get();
 
         foreach ($workers as $worker) {
-
+            $this->worker = $worker;
             $booking = Booking::where('worker_id', '=', $worker->worker_id)
                 ->where(function ($query) {
 
@@ -100,14 +103,7 @@ class DBController extends Controller
 
 
             if(!count($booking)) {
-                $worker_id = $worker->worker_id;
 
-                $booking = new Booking([
-                    'service_id' => $this->service_id,
-                    'worker_id' => $worker_id,
-                    'time_start' => $this->time_start,
-                    'time_finish' => $this->time_finish
-                ]);
 
 
                 return true;
@@ -121,5 +117,24 @@ class DBController extends Controller
 
         return false;
 
+    }
+    /**
+     * Save the booking to the database.
+     *
+     * @return void
+     */
+    public function save_to_db(){
+
+        $worker_id = $this->worker->worker_id;
+
+        $booking = new Booking([
+            'service_id' => $this->service_id,
+            'worker_id' => $worker_id,
+            'time_start' => $this->time_start,
+            'time_finish' => $this->time_finish
+        ]);
+        $service = Service::find($_POST['service']);
+
+        $service->bookings()->save($booking);
     }
 }

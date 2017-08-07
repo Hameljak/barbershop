@@ -20,10 +20,12 @@ class FreeHours extends Controller
     public function show($idn)
     {
 
-        for($t=strtotime('now')+3600;$t<strtotime('+1 week');$t+=3600){
+        for( $t = strtotime('now') + 3600; $t < strtotime('+1 week'); $t += 3600){
 
-            if(date("H", $t) >= 9 && date("H", $t) < 18 ) {
+            if( date("H", $t) >= 9 && date("H", $t) < 18 ) {
+
                 $dbc = new DBController($idn, date("Y-m-d H:00:00", $t));
+
                 if ($dbc->select_data()){
                     echo date("Y-m-d H:00:00", $t);
                     echo '<br>';
