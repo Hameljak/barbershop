@@ -42,7 +42,8 @@ class DBController
      *
      * @return void
      */
-    function __construct($service_id, $time) {
+    function __construct($service_id, $time)
+    {
 
         $this->service_id = $service_id;
 
@@ -60,7 +61,8 @@ class DBController
      *
      * @return boolean
      */
-    public function select_data(){
+    public function select_data()
+    {
 
         $workers = Worker::where('hour_start_work','<=', $this->hour_s)
 
@@ -76,12 +78,14 @@ class DBController
 
         ->get();
 
-        foreach ($workers as $worker) {
+        foreach ($workers as $worker)
+        {
             $this->worker = $worker;
 
             $booking = Booking::where('worker_id', '=', $worker->worker_id)
 
-            ->where(function ($query) {
+            ->where(function ($query)
+            {
 
                 $query->where('time_start', '<=', $this->time_start)
 
@@ -95,7 +99,8 @@ class DBController
 
             ->get();
 
-            if(!count($booking)) {
+            if(!count($booking))
+            {
 
                 return true;
             }
@@ -108,7 +113,8 @@ class DBController
      *
      * @return void
      */
-    public function save_to_db(Request $request){
+    public function save_to_db(Request $request)
+    {
 
         $worker_id = $this->worker->worker_id;
 

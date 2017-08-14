@@ -4,7 +4,8 @@ namespace App\Services\Contracts;
 
 use Illuminate\Http\Request;
 
-Interface UseDB {
+Interface UseDB
+{
 
     public static function show_free_hours(Request $request);
 

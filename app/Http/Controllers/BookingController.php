@@ -15,7 +15,8 @@ class BookingController extends Controller
     | Save the booking to the database
     |
     */
-    public function show(){
+    public function show()
+    {
 
         echo '<h1>Booking</h1>';
 
