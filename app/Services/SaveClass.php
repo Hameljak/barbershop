@@ -37,7 +37,13 @@ class SaveClass implements UseDB {
 
             $dbc->save_to_db($request);
 
+            $json_arr = ['insert'=>'ok'];
+
+            return json_encode($json_arr);
+
         }
+
+        return;
     }
 }
 ?>

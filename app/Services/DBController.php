@@ -128,5 +128,6 @@ class DBController
         $service = Service::find($request->input('service'));
 
         $service->bookings()->save($booking);
+        
     }
 }
